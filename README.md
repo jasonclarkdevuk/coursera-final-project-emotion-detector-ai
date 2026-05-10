@@ -1,5 +1,6 @@
-# Repository for final project
+# Repository for Emotion Detection
 Project Name: Final project
-Based of: oaqjp-final-project-emb-ai
+
+Based of repository: oaqjp-final-project-emb-ai
 
 This project revolves around analysing text and determining certain emotional scores as well as highlighting the dominant score.

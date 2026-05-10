@@ -30,14 +30,18 @@ def emotion_analyser():
     sadness = response["sadness"]
     dominant_emotion = response["dominant_emotion"]
 
-    # Return data statement
+    # No dominant emotion set, presume invalid input
+    if dominant_emotion is None:
+        return "<strong>Invalid text! Please try again!</strong>"
+
+    # Return data since dominant emotion is present
     intro = "For the given statement, the system response is "
     anger_info = f"'anger': {anger}"
     disgust_info = f", 'disgust': {disgust}"
     fear_info = f", 'fear': {fear}"
     joy_info = f", 'joy': {joy}"
     sadness_info = f", 'sadness': {sadness}."
-    dominant_info = f" The dominant emotion is <strong>{dominant_emotion}</strong>." 
+    dominant_info = f" The dominant emotion is <strong>{dominant_emotion}</strong>."
 
     return intro + anger_info + disgust_info + fear_info + joy_info + sadness_info + dominant_info
 
@@ -51,5 +55,5 @@ def render_index_page():
 if __name__ == "__main__":
     # This functions executes the flask app and deploys it on localhost:5000
 
-    #Run the Flask app
+    # Run the Flask app
     app.run(debug=True) # Debug mode is enabled
